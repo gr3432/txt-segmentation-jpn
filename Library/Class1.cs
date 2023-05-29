@@ -3,6 +3,7 @@ public class Class1
 {
     public int[] my_numbers;
     public static int SIZE = 10;
+    public string Name { get; set; } = "no_name";
 
     public Class1()
     {

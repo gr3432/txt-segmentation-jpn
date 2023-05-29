@@ -21,4 +21,19 @@ public class UnitTest1
             Assert.AreEqual(myobject.my_numbers[i], 5);
         }
     }
+
+    [TestMethod]
+    public void TestGetNameProperty()
+    {
+        Class1 myobject = new Class1();
+        Assert.AreEqual(myobject.Name, "no_name");
+    }
+
+    [TestMethod]
+    public void TestSetNameProperty()
+    {
+        Class1 myobject = new Class1();
+        myobject.Name = "some_name";
+        Assert.AreEqual(myobject.Name, "some_name");
+    }
 }
