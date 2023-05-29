@@ -2,7 +2,7 @@
 public class Class1
 {
     public int[] my_numbers;
-    public int SIZE = 10;
+    public static int SIZE = 10;
 
     public Class1()
     {

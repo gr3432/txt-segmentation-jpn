@@ -16,7 +16,7 @@ public class UnitTest1
     public void TestMethod2()
     {
         Class1 myobject = new Class1(5);
-        for (int i = 0; i < myobject.SIZE; i++)
+        for (int i = 0; i < Class1.SIZE; i++)
         {
             Assert.AreEqual(myobject.my_numbers[i], 5);
         }
