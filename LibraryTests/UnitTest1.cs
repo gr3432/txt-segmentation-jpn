@@ -11,4 +11,14 @@ public class UnitTest1
         Class1 myobject = new Class1();
         Assert.IsTrue(myobject.IsIt());
     }
+
+    [TestMethod]
+    public void TestMethod2()
+    {
+        Class1 myobject = new Class1(5);
+        for (int i = 0; i < 10; i++)
+        {
+            Assert.AreEqual(myobject.my_numbers[i], 5);
+        }
+    }
 }
