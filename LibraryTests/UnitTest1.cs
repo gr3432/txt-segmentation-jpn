@@ -36,4 +36,12 @@ public class UnitTest1
         myobject.Name = "some_name";
         Assert.AreEqual(myobject.Name, "some_name");
     }
+
+    [TestMethod]
+    public void TestConverter()
+    {
+        string hiragana = "ぴかちゅう";
+        string katakana = Converter.Convert(hiragana);
+        Assert.AreEqual(katakana, "ピカチュウ");
+    }
 }
