@@ -2,16 +2,21 @@ namespace Library;
 
 public static class Converter
 {
-    public static string Convert(string word)
-    {       
-        string result = "";
-        foreach(char c in word)
+    public static string? Convert(string? word)
+    {
+        if (word != null)
         {
-            if(c >= 'あ' && c <= 'ん')
+            string result = "";
+            foreach(char c in word)
             {
-                result += (char)(96 + (int)c);
+                if(c >= 'あ' && c <= 'ん')
+                {
+                    result += (char)(96 + (int)c);
+                }
             }
+            return result;
         }
-        return result;
+        return null;
+
     }
 }

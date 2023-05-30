@@ -41,7 +41,7 @@ public class UnitTest1
     public void TestConverter()
     {
         string hiragana = "ぴかちゅう";
-        string katakana = Converter.Convert(hiragana);
+        string? katakana = Converter.Convert(hiragana);
         Assert.AreEqual(katakana, "ピカチュウ");
     }
 }
