@@ -61,12 +61,27 @@ public class UnitTest1
         Assert.AreEqual(converted, "電ハエ。a5２");
     }
 
-    [TestMethod]
-    public void TestSplitter()
+    public static IEnumerable<object[]> GetSplitterData()
     {
-        string sentence = "行く川のながれは絶えずして、しかももとの水にあらず。";
+        yield return new object[] {
+            "行く川のながれは絶えずして、しかももとの水にあらず。",
+            new string[] {"行く", "川", "の", "ながれ", "は", "絶えず", "して", "しかも", "もと", "の", "水", "に", "あらず"}
+        };
+        yield return new object[] {
+            "食べさせられない",
+            new string[] {"食べさせられない"}
+        };
+        yield return new object[] {
+            "説明してください",
+            new string[] {"説明", "して", "ください"}
+        };
+    }
+
+    [TestMethod]
+    [DynamicData(nameof(GetSplitterData), DynamicDataSourceType.Method)]
+    public void TestSplitter(string sentence, string[] expected)
+    {
         string[] words = Splitter.Split(sentence);
-        string[] expected = {"行く", "川", "の", "ながれ", "は", "絶えず", "して", "しかも", "もと", "の", "水", "に", "あらず"};
         CollectionAssert.AreEqual(words, expected);
     }
 }
