@@ -44,4 +44,20 @@ public class UnitTest1
         string? katakana = Converter.Convert(hiragana);
         Assert.AreEqual(katakana, "ピカチュウ");
     }
+
+    [TestMethod]
+    public void TestConverterWithNull()
+    {
+        string? word = null;
+        string? katakana = Converter.Convert(word);
+        Assert.IsNull(katakana);
+    }
+
+    [TestMethod]
+    public void TestConverterWithMixedScripts()
+    {
+        string word = "電はエ。a5２";
+        string? converted = Converter.Convert(word);
+        Assert.AreEqual(converted, "電ハエ。a5２");
+    }
 }
