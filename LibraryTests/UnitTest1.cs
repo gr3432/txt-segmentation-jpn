@@ -60,4 +60,13 @@ public class UnitTest1
         string? converted = Converter.Convert(word);
         Assert.AreEqual(converted, "電ハエ。a5２");
     }
+
+    [TestMethod]
+    public void TestSplitter()
+    {
+        string sentence = "行く川のながれは絶えずして、しかももとの水にあらず。";
+        string[] words = Splitter.Split(sentence);
+        string[] expected = {"行く", "川", "の", "ながれ", "は", "絶えず", "して", "しかも", "もと", "の", "水", "に", "あらず"};
+        CollectionAssert.AreEqual(words, expected);
+    }
 }
