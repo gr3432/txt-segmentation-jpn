@@ -13,6 +13,10 @@ public static class Converter
                 {
                     result += (char)(96 + (int)c);
                 }
+                else
+                {
+                    result += c;
+                }
             }
             return result;
         }
